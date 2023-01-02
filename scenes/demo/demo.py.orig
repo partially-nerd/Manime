@@ -1,0 +1,17 @@
+from .... import animate
+import numpy as np
+import math
+
+# DEFINITIONS
+win = Window()
+circ = win.draw_circle(
+  r = 100,
+  y = -100
+)
+
+# ANIMATION
+def draw():
+    win.play_animations()
+
+win.queue_animations = [globals()['circ'].interpolate(param, start, end),globals()['circ'].interpolate(param, start, end),globals()['circ'].interpolate(param, start, end),]
+win.render(draw)
